@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "aside top-box top-box"
+        "aside main main"
+        "aside mini-sections mini-sections"
+        "footer footer footer";
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: limegreen;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+aside {
+    grid-area: aside;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.top-box {
+    grid-area: top-box;
+    background-color: pink;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+main section {
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.mini-sections {
+    grid-area: mini-sections;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.mini-box {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: limegreen;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "aside aside"
+            "top-box top-box"
+            "main main"
+            "mini-sections mini-sections"
+            "footer footer";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mini-sections {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "top-box"
+            "main"
+            "mini-sections"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .mini-sections {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
