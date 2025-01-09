@@ -43,6 +43,7 @@ aside {
     background-color: pink;
     text-align: center;
     padding: 10px;
+    color: white;
 }
 
 main {
@@ -57,12 +58,13 @@ main section {
     text-align: center;
     padding: 10px;
     border: 1px solid #ccc;
+    color: white;
 }
 
 .mini-sections {
     grid-area: mini-sections;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr 30% 1fr 1fr;
     gap: 5px;
 }
 
