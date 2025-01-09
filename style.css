@@ -81,36 +81,33 @@ footer {
     color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .container {
         grid-template-areas:
-            "header header"
-            "aside aside"
-            "top-box top-box"
-            "main main"
-            "mini-sections mini-sections"
-            "footer footer";
-        grid-template-columns: 1fr 1fr;
+            "header header header"
+            "aside top-box top-box"
+            "aside top-boxtop-box"
+            "aside main main"
+            "aside mini-sections mini-sections"
+            "footer footer footer";
+        grid-template-columns: 1fr 2fr 2fr;
     }
 
     .mini-sections {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .container {
         grid-template-areas:
             "header"
+            "aside"
             "top-box"
             "main"
             "mini-sections"
             "footer";
         grid-template-columns: 1fr;
-    }
-
-    aside {
-        display: none;
     }
 
     .mini-sections {
